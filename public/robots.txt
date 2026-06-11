@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/*
+
+# Host
+Host: https://fazis.lt
+
+# Sitemaps
+Sitemap: https://fazis.lt/sitemap.xml
