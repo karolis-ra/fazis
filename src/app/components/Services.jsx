@@ -50,10 +50,7 @@ export const Services = () => {
           <h2 className="mt-3 text-4xl font-bold text-[#111312] md:text-5xl">
             Elektros darbai, kuriems svarbi tvarka ir saugumas
           </h2>
-          <p className="mt-4 text-lg leading-8 text-[#47606a]">
-            Dirbu su aiškiu procesu: įvertinu situaciją, paaiškinu sprendimą ir
-            prieš pradėdamas suderinu darbų apimtį.
-          </p>
+
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

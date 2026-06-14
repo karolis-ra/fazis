@@ -144,26 +144,6 @@ export default function Home() {
         </Wrapper>
       </section>
 
-      <section className="bg-[#111312] py-16 text-white">
-        <Wrapper>
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="section-kicker text-[#ffd166]">Kontaktai</p>
-              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-                Reikia elektriko? Aptarkime situaciją.
-              </h2>
-            </div>
-            <Link
-              href="/contacts"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#f5b301] px-6 py-3 font-semibold text-[#111312] transition-colors hover:bg-[#ffd166]"
-            >
-              Susisiekti
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </Wrapper>
-      </section>
-
       <Footer />
     </div>
   );

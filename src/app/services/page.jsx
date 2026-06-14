@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 import { AdditionalServicesSection } from "../components/AdditionalServices";
@@ -36,16 +37,21 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-[#f8faf7]">
       <Navigation />
       <main>
-        <section className="bg-[#111312] pt-20 text-white">
-          <Wrapper className="py-16">
-            <p className="section-kicker text-[#ffd166]">Paslaugos</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-bold md:text-6xl">
-              Elektros darbų kainos skaičiuoklė
+        <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
+          <Image
+            src="/images/paslaugo-hero.jpg"
+            alt="Fazis elektros darbų paslaugos"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,19,18,0.78)_0%,rgba(17,19,18,0.42)_48%,rgba(17,19,18,0.22)_100%)]" />
+          <div className="absolute inset-0 bg-[#111312]/16" />
+          <Wrapper className="relative z-10 flex min-h-[38vh] items-center justify-center py-10 text-center md:min-h-[48vh] md:justify-start md:py-12 md:text-left">
+            <h1 className="text-5xl font-semibold leading-none tracking-normal text-white md:text-7xl">
+              Paslaugos
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/72">
-              Pasirinkite konkrečius darbus, elektros taškų skaičių arba namo
-              kvadratūrą ir greitai įsivertinkite preliminarų biudžetą.
-            </p>
           </Wrapper>
         </section>
 

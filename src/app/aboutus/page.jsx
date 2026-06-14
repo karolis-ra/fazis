@@ -1,5 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ClipboardCheck, PhoneCall, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCheck,
+  PhoneCall,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 import { Wrapper } from "../components/Wrapper";
@@ -26,7 +34,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Saugumas pirmoje vietoje",
-    text: "Elektros darbai turi būti atliekami taip, kad sprendimas būtų patikimas ne tik šiandien, bet ir po metų.",
+    text: "Elektros darbai turi būti atliekami taip, kad sprendimas būtų patikimas ne tik šiandien, bet ir ateityje.",
   },
   {
     icon: ClipboardCheck,
@@ -36,7 +44,7 @@ const values = [
   {
     icon: Sparkles,
     title: "Tvarkingas rezultatas",
-    text: "Vertinu ne tik pajungimą, bet ir tai, kaip atrodo galutinis darbas bei kokia tvarka paliekama darbo vietoje.",
+    text: "Ne tik sujungiame, kad veiktų, bet ir rūpinamės estetiniu vaizdu.",
   },
 ];
 
@@ -45,17 +53,21 @@ export default function AboutUsPage() {
     <div className="min-h-screen bg-[#f8faf7]">
       <Navigation />
       <main>
-        <section className="bg-[#111312] pt-20 text-white">
-          <Wrapper className="py-16">
-            <p className="section-kicker text-[#ffd166]">Apie Fazis</p>
-            <h1 className="mt-3 max-w-4xl text-4xl font-bold md:text-6xl">
-              Jauna elektros darbų įmonė su rimtu požiūriu į atsakomybę
+        <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
+          <Image
+            src="/images/apie-mus-hero.jpg"
+            alt="Apie Fazis"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,19,18,0.78)_0%,rgba(17,19,18,0.42)_48%,rgba(17,19,18,0.22)_100%)]" />
+          <div className="absolute inset-0 bg-[#111312]/16" />
+          <Wrapper className="relative z-10 flex min-h-[38vh] items-center justify-center py-10 text-center md:min-h-[48vh] md:justify-start md:py-12 md:text-left">
+            <h1 className="text-5xl font-semibold leading-none tracking-normal text-white md:text-7xl">
+              Apie mus
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/72">
-              Fazis kuriamas ne kaip didelė anoniminė komanda, o kaip patikimas
-              elektriko partneris žmonėms, kuriems svarbu suprasti, kas bus
-              daroma jų namuose ar verslo patalpose.
-            </p>
           </Wrapper>
         </section>
 
@@ -64,22 +76,18 @@ export default function AboutUsPage() {
             <div>
               <p className="section-kicker">Prisistatymas</p>
               <h2 className="mt-3 text-3xl font-bold text-[#111312] md:text-5xl">
-                Patirtis auga, bet darbo standartas turi būti aukštas nuo pirmos dienos
+                Fazis - jauna, bet itin atsakinga elektros darbų įmonė.
               </h2>
             </div>
             <div className="space-y-5 text-lg leading-8 text-[#47606a]">
               <p>
-                Esu pradedantysis elektrikas, todėl man ypač svarbu dirbti
-                atsakingai, neskubėti ten, kur reikia tikslumo, ir aiškiai
-                komunikuoti su klientu. Jei situacija reikalauja papildomo
-                įvertinimo ar siauresnės specializacijos, apie tai pasakau
-                tiesiai.
+                Fazis yra auganti elektros darbų įmonė, kuriai ypač svarbu
+                dirbti atsakingai ir
+                aiškiai komunikuoti su klientu. Mūsų tikslas - kad klientas jaustųsi ramiai - žinotų kas daroma ir kodėl. Elektros darbai nėra vieta spėlionėms, todėl saugumas ir patikimos medžiagas yra prioritetas. 
               </p>
               <p>
-                Mano tikslas - kad klientas jaustųsi ramiai: žinotų, kas
-                daroma, kodėl tai daroma ir kokį rezultatą gaus. Elektros darbai
-                nėra vieta spėlionėms, todėl renkuosi tvarkingą procesą,
-                patikimas medžiagas ir saugų atlikimą.
+                Mūsų tikslas - kad klientas jaustųsi ramiai: žinotų, kas
+                daroma, kodėl tai daroma ir kokį rezultatą gaus. Mūsų elektrikų komanda nuolat tobulinasi ir ieško geriausio sprendimo.
               </p>
             </div>
           </div>
@@ -100,36 +108,10 @@ export default function AboutUsPage() {
           </div>
         </Wrapper>
 
-        <section className="bg-white py-16">
-          <Wrapper>
-            <div className="grid gap-10 md:grid-cols-2 md:items-center">
-              <div>
-                <p className="section-kicker">Ką gaunate</p>
-                <h2 className="mt-3 text-3xl font-bold text-[#111312] md:text-4xl">
-                  Ne pažadą apie stebuklus, o aiškų, atsakingą darbą
-                </h2>
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "Tiesų situacijos įvertinimą",
-                  "Aiškiai suderintą darbų apimtį",
-                  "Tvarkingą ir saugų atlikimą",
-                  "Paaiškinimą, kas buvo padaryta",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#b86f2f]" />
-                    <span className="text-lg text-[#2d3835]">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Wrapper>
-        </section>
-
         <Wrapper className="py-16">
           <div className="flex flex-col gap-5 rounded-lg bg-[#111312] p-6 text-white md:flex-row md:items-center md:justify-between md:p-8">
             <div>
-              <h2 className="text-2xl font-bold">Turite elektros klausimą?</h2>
+              <h2 className="text-2xl font-bold">Turite klausimą?</h2>
               <p className="mt-2 text-white/70">
                 Parašykite arba paskambinkite, trumpai aptarsime situaciją.
               </p>

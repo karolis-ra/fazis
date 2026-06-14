@@ -73,9 +73,9 @@ const rawWorkItems = [
   ["junctionBrick", "Paskirstymo dėžutės montavimas mūrinėje sienoje", "vnt.", 4.8],
   ["junctionRepair", "Paskirstymo dėžutės remontas", "vnt.", 5.4],
   ["distributionPanel", "Paskirstymo skydo apjungimas", "vnt.", 120],
-  ["hiddenSocket", "Potinkinės rozetės, jungiklio montavimas su pajungimu", "vnt.", 4.8],
+  ["hiddenSocket", "Potinkiniai kištukiniai lizdai, jungiklio montavimas su pajungimu", "vnt.", 4.8],
   ["hiddenPanel12", "Potinkinio skydelio iki 12 grupių montavimas", "vnt.", 48],
-  ["socketRemove", "Rozetės, jungiklio demontavimas", "vnt.", 2.4],
+  ["socketRemove", "Kištukinio lizdo, jungiklio demontavimas", "vnt.", 2.4],
   ["wallLight", "Sieninio šviestuvo montavimas ir pajungimas", "vnt.", 6],
   ["lowVoltageRemove", "Silpnasrovio laido demontavimas", "m", 1.2],
   ["halogenHoleDrywallCeiling", "Skylės halogeniniam šviestuvui išpjovimas gipskartonio lubose", "vnt.", 3.6],
@@ -100,7 +100,7 @@ const rawWorkItems = [
   ["fan", "Ventiliatoriaus montavimas", "vnt.", 12],
   ["singlePhaseMeter", "Vienfazio elektros energijos skaitiklio montavimas ir pajungimas", "vnt.", 12],
   ["surfaceJunction", "Virštinkinės paskirstymo dėžutės montavimas", "vnt.", 4.8],
-  ["surfaceSocket", "Virštinkinės rozetės, jungiklio montavimas su pajungimu", "vnt.", 6],
+  ["surfaceSocket", "Virštinkiniai kištukiniai lizdai, jungiklio montavimas su pajungimu", "vnt.", 6],
   ["surfacePanel12", "Virštinkinio skydelio iki 12 grupių montavimas", "vnt.", 12],
 ];
 
@@ -256,7 +256,7 @@ export default function ServiceCalculator() {
 
   const modes = [
     { id: "works", label: "Pagal darbus", icon: ListChecks },
-    { id: "points", label: "Pagal taškus", icon: Zap },
+    { id: "points", label: "Pagal elektros taškus", icon: Zap },
     { id: "area", label: "Pagal kvadratūrą", icon: Ruler },
   ];
 
@@ -264,13 +264,8 @@ export default function ServiceCalculator() {
     <section className="rounded-lg bg-white p-5 shadow-[0_18px_45px_-30px_rgba(17,19,18,0.7)] ring-1 ring-[#111312]/10 md:p-8">
       <div>
         <p className="section-kicker">Kainos skaičiuoklė</p>
-        <h2 className="mt-3 max-w-3xl text-3xl font-bold text-[#111312] md:text-5xl">
-          Pasirinkite patogiausią skaičiavimo būdą
-        </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-[#47606a]">
-          Skaičiuoklė skirta greitam orientaciniam įvertinimui. Darbų įkainiai
-          paruošti pagal rinkos kainų lentelę, pritaikant šiek tiek aukštesnį
-          nei bazinis įkainį.
+          Skaičiuoklė skirta greitam orientaciniam kainos įvertinimui. 
         </p>
       </div>
 
@@ -302,7 +297,7 @@ export default function ServiceCalculator() {
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   className="w-full rounded-full border border-[#111312]/12 py-3 pl-12 pr-4 outline-none focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/20"
-                  placeholder="Ieškoti darbo: rozetė, šviestuvas, skydelis..."
+                  placeholder="Ieškoti darbo: kištukinis lizdas, šviestuvas, skydelis..."
                 />
               </label>
 

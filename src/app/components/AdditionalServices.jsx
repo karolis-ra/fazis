@@ -57,7 +57,7 @@ export const AdditionalServicesSection = () => {
     <section className="relative mt-16">
       <p className="section-kicker">Papildomi darbai</p>
       <h2 className="mt-3 max-w-2xl text-3xl font-bold text-[#111312] md:text-4xl">
-        Kai reikia ne didelio projekto, o tiesiog tvarkingai išspręsti problemą
+        Kai reikia ne didelio projekto, o greitai išspręsti problemą
       </h2>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
