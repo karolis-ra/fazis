@@ -43,8 +43,8 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="bg-[#f8faf7] py-20">
-      <Wrapper>
+    <section className="electric-doodle-section relative overflow-hidden py-20">
+      <Wrapper className="relative z-10">
         <div className="max-w-3xl">
           <p className="section-kicker">Paslaugos</p>
           <h2 className="mt-3 text-4xl font-bold text-[#111312] md:text-5xl">
@@ -57,7 +57,7 @@ export const Services = () => {
           {services.map(({ icon: Icon, title, text }) => (
             <article
               key={title}
-              className="rounded-lg bg-white p-6 ring-1 ring-[#111312]/10 transition-transform duration-300 hover:-translate-y-1"
+              className="rounded-lg bg-white p-6 ring-1 ring-[#111312]/10"
             >
               <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md bg-[#111312] text-[#ffd166]">
                 <Icon className="h-6 w-6" />

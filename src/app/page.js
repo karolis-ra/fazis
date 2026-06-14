@@ -106,8 +106,8 @@ export default function Home() {
         </Wrapper>
       </section>
 
-      <section className="bg-white py-20">
-        <Wrapper>
+      <section className="electric-doodle-section electric-doodle-section--white relative overflow-hidden py-20">
+        <Wrapper className="relative z-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="section-kicker">Blogas</p>

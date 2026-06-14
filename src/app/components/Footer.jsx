@@ -11,10 +11,6 @@ export const Footer = () => {
             <h3 className="font-logo text-3xl font-bold">
               fazis<span className="text-[#f5b301]">.</span>
             </h3>
-            <p className="mt-3 max-w-sm leading-7 text-white/68">
-              Tvarkingi elektros darbai namams ir verslui. Aiški komunikacija,
-              saugūs sprendimai ir pagarba jūsų laikui.
-            </p>
           </div>
 
           <nav className="flex flex-col gap-3 text-white/78">
@@ -23,6 +19,9 @@ export const Footer = () => {
             </Link>
             <Link href="/aboutus" className="hover:text-white">
               Apie mus
+            </Link>
+            <Link href="/galerija" className="hover:text-white">
+              Galerija
             </Link>
             <Link href="/blogas" className="hover:text-white">
               Blogas

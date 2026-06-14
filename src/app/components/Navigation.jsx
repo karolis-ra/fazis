@@ -14,6 +14,7 @@ export const Navigation = () => {
     { name: "Pagrindinis", href: "/" },
     { name: "Paslaugos", href: "/services" },
     { name: "Apie mus", href: "/aboutus" },
+    { name: "Galerija", href: "/galerija" },
     { name: "Blogas", href: "/blogas" },
     { name: "Kontaktai", href: "/contacts" },
   ];
