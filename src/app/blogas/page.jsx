@@ -19,7 +19,7 @@ export default function BlogPage() {
   const categories = [...new Set(blogPosts.map((post) => post.category))];
 
   return (
-    <div className="min-h-screen bg-[#f8faf7]">
+    <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
       <main>
         <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
@@ -45,7 +45,7 @@ export default function BlogPage() {
             {categories.map((category) => (
               <span
                 key={category}
-                className="rounded-full border border-[#111312]/12 bg-white px-4 py-2 text-sm font-semibold text-[#2d3835]"
+                className="rounded-full border border-white/12 bg-[#343b46] px-4 py-2 text-sm font-semibold text-white"
               >
                 {category}
               </span>
@@ -56,7 +56,7 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
-                className="overflow-hidden rounded-lg bg-white ring-1 ring-[#111312]/10 transition-transform hover:-translate-y-1"
+                className="overflow-hidden rounded-lg bg-[#343b46] ring-1 ring-white/10 transition-colors hover:bg-[#37404c]"
               >
                 <div className="relative h-52">
                   <Image
@@ -68,19 +68,17 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-3 text-sm font-semibold text-[#8a6a28]">
+                  <div className="flex items-center gap-3 text-sm font-semibold text-[#ffd166]">
                     <span>{post.category}</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className="mt-3 text-2xl font-bold text-[#111312]">
+                  <h2 className="mt-3 text-2xl font-bold text-white">
                     {post.title}
                   </h2>
-                  <p className="mt-3 leading-7 text-[#47606a]">
-                    {post.excerpt}
-                  </p>
+                  <p className="mt-3 leading-7 text-white">{post.excerpt}</p>
                   <Link
                     href={`/blogas/${post.slug}`}
-                    className="group mt-5 inline-flex items-center gap-2 font-bold text-[#111312]"
+                    className="group mt-5 inline-flex items-center gap-2 font-bold text-[#ffd166]"
                   >
                     Skaityti
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

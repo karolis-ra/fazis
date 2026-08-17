@@ -58,7 +58,7 @@ export default function GalleryViewer({ images }) {
 
   return (
     <>
-      <div className="overflow-hidden rounded-lg bg-[#111312] ring-1 ring-[#111312]/10">
+      <div className="overflow-hidden rounded-lg bg-[#111312] ring-1 ring-white/10">
         <div className="relative aspect-[16/9] min-h-[280px] md:min-h-[420px]">
           <Image
             src={activeImage.src}
@@ -73,7 +73,7 @@ export default function GalleryViewer({ images }) {
           <button
             type="button"
             onClick={() => setLightboxIndex(activeIndex)}
-            className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#111312]/78 text-white backdrop-blur transition-colors hover:bg-[#111312]"
+            className="absolute right-3 top-3 z-20 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:right-4 md:top-4 md:h-11 md:w-11"
             aria-label="Padidinti nuotrauką"
           >
             <Maximize2 className="h-5 w-5" />
@@ -84,7 +84,7 @@ export default function GalleryViewer({ images }) {
               <button
                 type="button"
                 onClick={showPrevious}
-                className="absolute left-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/78 text-white backdrop-blur transition-colors hover:bg-[#111312]"
+                className="absolute left-3 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:left-4 md:h-11 md:w-11"
                 aria-label="Ankstesnė nuotrauka"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -92,7 +92,7 @@ export default function GalleryViewer({ images }) {
               <button
                 type="button"
                 onClick={showNext}
-                className="absolute right-4 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/78 text-white backdrop-blur transition-colors hover:bg-[#111312]"
+                className="absolute right-3 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:right-4 md:h-11 md:w-11"
                 aria-label="Kita nuotrauka"
               >
                 <ChevronRight className="h-6 w-6" />
@@ -116,7 +116,7 @@ export default function GalleryViewer({ images }) {
               className={`h-2.5 rounded-full transition-all ${
                 index === activeIndex
                   ? "w-9 bg-[#f5b301]"
-                  : "w-2.5 bg-[#111312]/20 hover:bg-[#111312]/45"
+                  : "w-2.5 bg-white/24 hover:bg-white/45"
               }`}
               aria-label={`Rodyti nuotrauką ${index + 1}`}
             />
@@ -130,7 +130,7 @@ export default function GalleryViewer({ images }) {
             key={image.src}
             type="button"
             onClick={() => setLightboxIndex(index)}
-            className="group overflow-hidden rounded-lg bg-white text-left ring-1 ring-[#111312]/10"
+            className="group overflow-hidden rounded-lg bg-[#343b46] text-left ring-1 ring-white/10"
             aria-label="Padidinti nuotrauką"
           >
             <span className="relative block aspect-[4/3]">

@@ -16,7 +16,7 @@ export const blogPosts = [
       },
       {
         heading: "Dažnos priežastys",
-        body: "Automatai dažnai išmuša dėl per didelės apkrovos vienoje linijoje, drėgmės, pažeisto kabelio, netvarkingos rozetės ar prietaiso gedimo. Tiksliai priežasčiai nustatyti reikia patikrinti grandinę ir apkrovą.",
+        body: "Automatai dažnai išmuša dėl per didelės apkrovos vienoje linijoje, drėgmės, pažeisto kabelio, netvarkingoi kištukiniai lizdai ar prietaiso gedimo. Tiksliai priežasčiai nustatyti reikia patikrinti grandinę ir apkrovą.",
       },
       {
         heading: "Ką galite patikrinti patys",
@@ -75,17 +75,17 @@ export const blogPosts = [
   },
   {
     slug: "rozetes-ir-jungikliai",
-    title: "Rozetės ir jungikliai: ką verta apgalvoti iš anksto",
+    title: "Kištukiniai lizdai ir jungikliai: ką verta apgalvoti iš anksto",
     category: "Patarimai namams",
     date: "2026-06-05",
     readTime: "4 min.",
     image: "/images/fazis-hero.jpg",
     excerpt:
-      "Kiek rozečių reikia virtuvėje, kur patogu montuoti jungiklius ir kodėl elektros taškų planavimas padeda išvengti prailgintuvų.",
+      "Kiek kištukinių lizdų reikia virtuvėje, kur patogu montuoti jungiklius ir kodėl elektros taškų planavimas padeda išvengti prailgintuvų.",
     videoUrl: null,
     content: [
       {
-        heading: "Rozetės turi būti ten, kur bus prietaisai",
+        heading: "Kištukiniai lizdai turi būti ten, kur bus prietaisai",
         body: "Virtuvėje, darbo kambaryje ir prie televizoriaus elektros taškų dažnai pritrūksta greičiausiai. Geriau suplanuoti kelis papildomus taškus iš anksto nei vėliau naudoti prailgintuvus.",
       },
       {
@@ -104,7 +104,7 @@ export const blogPosts = [
           "Galima, bet dažnai tai reiškia daugiau apdailos darbų, todėl geriausia planuoti prieš remontą.",
       },
       {
-        question: "Ar visoms rozetėms užtenka vienos linijos?",
+        question: "Ar visiems kištukiniams lizdams užtenka vienos linijos?",
         answer:
           "Ne visada. Tai priklauso nuo planuojamų prietaisų ir apkrovos, todėl verta įvertinti konkrečią situaciją.",
       },

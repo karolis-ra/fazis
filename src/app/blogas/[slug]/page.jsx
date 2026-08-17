@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#f8faf7]">
+    <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
       <main>
         <article>
@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }) {
             <Wrapper className="py-12">
               <Link
                 href="/blogas"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#ffd166]"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Grįžti į blogą
@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }) {
               <h1 className="mt-3 max-w-4xl text-4xl font-bold md:text-6xl">
                 {post.title}
               </h1>
-              <div className="mt-5 flex flex-wrap gap-3 text-white/65">
+              <div className="mt-5 flex flex-wrap gap-3 text-white">
                 <span>{post.date}</span>
                 <span>{post.readTime}</span>
               </div>
@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }) {
           </section>
 
           <Wrapper className="py-10">
-            <div className="relative h-[320px] overflow-hidden rounded-lg md:h-[480px]">
+            <div className="relative h-[320px] overflow-hidden rounded-lg ring-1 ring-white/10 md:h-[480px]">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {post.videoUrl && (
-              <div className="mt-8 aspect-video overflow-hidden rounded-lg bg-[#111312]">
+              <div className="mt-8 aspect-video overflow-hidden rounded-lg bg-[#111312] ring-1 ring-white/10">
                 <iframe
                   title={post.title}
                   src={post.videoUrl}
@@ -100,35 +100,33 @@ export default async function BlogPostPage({ params }) {
               </div>
             )}
 
-            <div className="mx-auto mt-10 max-w-3xl">
-              <p className="text-xl leading-9 text-[#2d3835]">
-                {post.excerpt}
-              </p>
+            <div className="mx-auto mt-10 max-w-3xl rounded-lg bg-[#343b46] p-6 ring-1 ring-white/10 md:p-8">
+              <p className="text-xl leading-9 text-white">{post.excerpt}</p>
 
               <div className="mt-10 space-y-10">
                 {post.content.map((section) => (
                   <section key={section.heading}>
-                    <h2 className="text-3xl font-bold text-[#111312]">
+                    <h2 className="text-3xl font-bold text-white">
                       {section.heading}
                     </h2>
-                    <p className="mt-4 text-lg leading-8 text-[#47606a]">
+                    <p className="mt-4 text-lg leading-8 text-white">
                       {section.body}
                     </p>
                   </section>
                 ))}
               </div>
 
-              <section className="mt-12 rounded-lg bg-white p-6 ring-1 ring-[#111312]/10">
-                <h2 className="text-3xl font-bold text-[#111312]">DUK</h2>
+              <section className="mt-12 rounded-lg bg-[#111312] p-6 ring-1 ring-white/10">
+                <h2 className="text-3xl font-bold text-white">DUK</h2>
                 <div className="mt-6 space-y-5">
                   {post.faq.map((item) => (
                     <div key={item.question} className="flex gap-3">
-                      <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#b86f2f]" />
+                      <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#ffd166]" />
                       <div>
-                        <h3 className="font-bold text-[#111312]">
+                        <h3 className="font-bold text-white">
                           {item.question}
                         </h3>
-                        <p className="mt-1 leading-7 text-[#47606a]">
+                        <p className="mt-1 leading-7 text-white">
                           {item.answer}
                         </p>
                       </div>

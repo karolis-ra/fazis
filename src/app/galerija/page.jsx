@@ -57,7 +57,7 @@ export default function GalleryPage() {
   const images = getGalleryImages();
 
   return (
-    <div className="min-h-screen bg-[#f8faf7]">
+    <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
       <main>
         <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
@@ -83,11 +83,11 @@ export default function GalleryPage() {
             {images.length > 0 ? (
               <GalleryViewer images={images} />
             ) : (
-              <div className="rounded-lg bg-white p-8 text-center ring-1 ring-[#111312]/10">
-                <p className="text-lg font-semibold text-[#111312]">
+              <div className="rounded-lg bg-[#343b46] p-8 text-center ring-1 ring-white/10">
+                <p className="text-lg font-semibold text-white">
                   Galerija ruošiama
                 </p>
-                <p className="mt-2 text-[#47606a]">
+                <p className="mt-2 text-white">
                   Netrukus čia atsiras atliktų darbų nuotraukos.
                 </p>
               </div>

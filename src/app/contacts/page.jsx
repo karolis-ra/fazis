@@ -67,7 +67,7 @@ export default function ContactsPage() {
 
       setStatus({
         type: "ok",
-        msg: "Ačiū! Žinutė išsiųsta. Susisieksiu kaip galima greičiau.",
+        msg: "Ačiū! Žinutė išsiųsta. Susisieksime kaip galima greičiau.",
       });
       setForm({ name: "", email: "", message: "", company: "" });
     } catch (err) {
@@ -81,7 +81,7 @@ export default function ContactsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f8faf7]">
+    <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
 
       {status && (
@@ -132,20 +132,20 @@ export default function ContactsPage() {
           <div className="grid gap-10 md:grid-cols-[1fr_0.85fr]">
             <form
               onSubmit={handleSubmit}
-              className="rounded-lg bg-white p-6 shadow-[0_18px_45px_-30px_rgba(17,19,18,0.7)] ring-1 ring-[#111312]/10 md:p-8"
+              className="rounded-lg bg-[#343b46] p-6 ring-1 ring-white/10 md:p-8"
             >
-              <h2 className="text-2xl font-bold text-[#111312]">
+              <h2 className="text-2xl font-bold text-white">
                 Parašykite žinutę
               </h2>
 
               <div aria-live="polite" className="mt-4 min-h-6">
                 {status?.type === "ok" && (
-                  <div className="rounded-md border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
+                  <div className="rounded-md border border-green-300/30 bg-green-500/12 px-4 py-2 text-sm font-semibold text-green-100">
                     {status.msg}
                   </div>
                 )}
                 {status?.type === "error" && (
-                  <div className="rounded-md border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">
+                  <div className="rounded-md border border-red-300/30 bg-red-500/12 px-4 py-2 text-sm font-semibold text-red-100">
                     {status.msg}
                   </div>
                 )}
@@ -153,7 +153,7 @@ export default function ContactsPage() {
 
               <div className="mt-5 grid gap-4">
                 <div>
-                  <label className="mb-1 block text-sm font-semibold text-[#2d3835]">
+                  <label className="mb-1 block text-sm font-semibold text-white">
                     Vardas
                   </label>
                   <input
@@ -162,13 +162,13 @@ export default function ContactsPage() {
                     onChange={onChange}
                     required
                     disabled={loading}
-                    className="w-full rounded-md border border-[#111312]/15 px-4 py-3 outline-none transition focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
+                    className="w-full rounded-md border border-white/15 bg-[#2f3641] px-4 py-3 text-white outline-none transition placeholder:text-white/42 focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
                     placeholder="Jūsų vardas"
                   />
                 </div>
 
                 <div>
-                  <label className="mb-1 block text-sm font-semibold text-[#2d3835]">
+                  <label className="mb-1 block text-sm font-semibold text-white">
                     El. paštas
                   </label>
                   <input
@@ -178,7 +178,7 @@ export default function ContactsPage() {
                     onChange={onChange}
                     required
                     disabled={loading}
-                    className="w-full rounded-md border border-[#111312]/15 px-4 py-3 outline-none transition focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
+                    className="w-full rounded-md border border-white/15 bg-[#2f3641] px-4 py-3 text-white outline-none transition placeholder:text-white/42 focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
                     placeholder="vardas@pastas.lt"
                   />
                 </div>
@@ -194,7 +194,7 @@ export default function ContactsPage() {
                 />
 
                 <div>
-                  <label className="mb-1 block text-sm font-semibold text-[#2d3835]">
+                  <label className="mb-1 block text-sm font-semibold text-white">
                     Žinutė
                   </label>
                   <textarea
@@ -204,7 +204,7 @@ export default function ContactsPage() {
                     required
                     rows={7}
                     disabled={loading}
-                    className="w-full rounded-md border border-[#111312]/15 px-4 py-3 outline-none transition focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
+                    className="w-full rounded-md border border-white/15 bg-[#2f3641] px-4 py-3 text-white outline-none transition placeholder:text-white/42 focus:border-[#f5b301] focus:ring-2 focus:ring-[#f5b301]/25 disabled:opacity-60"
                     placeholder="Trumpai aprašykite problemą ar planuojamą darbą"
                   />
                 </div>
@@ -220,19 +220,19 @@ export default function ContactsPage() {
             </form>
 
             <aside className="space-y-6">
-              <div className="rounded-lg bg-[#111312] p-6 text-white md:p-8">
+              <div className="rounded-lg bg-[#343b46] p-6 text-white ring-1 ring-white/10 md:p-8">
                 <h2 className="text-2xl font-bold">Susisiekite tiesiogiai</h2>
-                <div className="mt-6 space-y-4 text-white/82">
+                <div className="mt-6 space-y-4 text-white">
                   <a
                     href="tel:+37062794262"
-                    className="flex items-center gap-3 hover:text-white"
+                    className="flex items-center gap-3 hover:text-[#ffd166]"
                   >
                     <Phone className="h-5 w-5 text-[#ffd166]" />
                     <span>+370 627 94262</span>
                   </a>
                   <a
                     href="mailto:info@fazis.lt"
-                    className="flex items-center gap-3 hover:text-white"
+                    className="flex items-center gap-3 hover:text-[#ffd166]"
                   >
                     <Mail className="h-5 w-5 text-[#ffd166]" />
                     <span>info@fazis.lt</span>
@@ -248,12 +248,13 @@ export default function ContactsPage() {
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-lg bg-white ring-1 ring-[#111312]/10">
+              <div className="overflow-hidden rounded-lg bg-[#343b46] p-2 ring-1 ring-white/10">
                 <iframe
                   title="Fazis aptarnaujama teritorija"
                   src="https://www.google.com/maps?q=54.6872,25.2797&z=11&output=embed"
                   width="100%"
                   height="340"
+                  className="rounded-md"
                   style={{ border: 0 }}
                   loading="lazy"
                   allowFullScreen

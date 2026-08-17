@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
-import { AdditionalServicesSection } from "../components/AdditionalServices";
 import ServiceCalculator from "../components/ServiceCalculator";
 import { Wrapper } from "../components/Wrapper";
 
@@ -34,7 +33,7 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-[#f8faf7]">
+    <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
       <main>
         <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
@@ -57,7 +56,6 @@ export default function ServicesPage() {
 
         <Wrapper className="py-16">
           <ServiceCalculator />
-          <AdditionalServicesSection />
         </Wrapper>
       </main>
       <Footer />
