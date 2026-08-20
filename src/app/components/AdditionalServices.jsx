@@ -13,11 +13,11 @@ const extras = [
   {
     icon: Flashlight,
     title: "Smulkūs gedimai",
-    desc: "Neveikiantys šviestuvai, jungikliai, rozetės ar kiti kasdieniai elektros nesklandumai.",
+    desc: "Neveikiantys šviestuvai, jungikliai, kištukiniai lizdai ar kiti kasdieniai elektros nesklandumai.",
   },
   {
     icon: Plug,
-    title: "Rozetės ir jungikliai",
+    title: "kištukiniai lizdai ir jungikliai",
     desc: "Keitimas, perkėlimas, papildomų taškų įrengimas ir tvarkingas pajungimas.",
   },
   {

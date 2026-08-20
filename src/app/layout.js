@@ -1,6 +1,5 @@
 import "./globals.css";
-import GTM from "./components/GTM";
-import CookieBanner from "./components/CookieBanner";
+import Script from "next/script";
 
 export const metadata = {
   metadataBase: new URL("https://fazis.lt"),
@@ -17,11 +16,15 @@ export default function RootLayout({ children }) {
     <html lang="lt" className="bg-[#f8faf7]">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <Script
+          id="cookie-script"
+          src="https://cdn.cookie-script.com/s/0f4ab1ee7ce420d8920298af25930b77.js"
+          strategy="afterInteractive"
+          charSet="UTF-8"
+        />
       </head>
       <body className="antialiased bg-[#f8faf7] text-[#111312]">
-        <GTM />
         {children}
-        <CookieBanner />
       </body>
     </html>
   );

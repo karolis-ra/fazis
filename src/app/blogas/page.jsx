@@ -9,15 +9,13 @@ import { blogPosts } from "../data/blogPosts";
 export const metadata = {
   title: "Blogas",
   description:
-    "Fazis blogas apie elektros gedimus, apšvietimą, saugumą ir praktiškus elektros darbų patarimus namams.",
+    "Fazis blogas apie kabelių pasirinkimą, automatinius jungiklius, srovės nuotėkio reles ir saugią namų elektros instaliaciją.",
   alternates: {
     canonical: "https://fazis.lt/blogas/",
   },
 };
 
 export default function BlogPage() {
-  const categories = [...new Set(blogPosts.map((post) => post.category))];
-
   return (
     <div className="min-h-screen bg-[#3f4652]">
       <Navigation />
@@ -41,18 +39,7 @@ export default function BlogPage() {
         </section>
 
         <Wrapper className="py-12">
-          <div className="flex flex-wrap gap-2">
-            {categories.map((category) => (
-              <span
-                key={category}
-                className="rounded-full border border-white/12 bg-[#343b46] px-4 py-2 text-sm font-semibold text-white"
-              >
-                {category}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
@@ -68,10 +55,9 @@ export default function BlogPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center gap-3 text-sm font-semibold text-[#ffd166]">
-                    <span>{post.category}</span>
-                    <span>{post.readTime}</span>
-                  </div>
+                  <p className="text-sm font-semibold text-[#ffd166]">
+                    {post.readTime}
+                  </p>
                   <h2 className="mt-3 text-2xl font-bold text-white">
                     {post.title}
                   </h2>

@@ -84,7 +84,7 @@ export default function Home() {
               >
                 <div className="relative aspect-[16/10]">
                   <Image
-                    src="/images/blogas-hero.jpg"
+                    src={post.image}
                     alt={post.title}
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
@@ -93,8 +93,8 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[#111312]/16" />
                 </div>
                 <div className="p-6">
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#ffd166]">
-                    {post.category}
+                  <p className="text-sm font-bold text-[#ffd166]">
+                    {post.readTime}
                   </p>
                   <h3 className="mt-4 text-2xl font-bold text-white group-hover:text-[#ffd166]">
                     {post.title}

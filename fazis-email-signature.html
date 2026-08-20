@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fazis el. pašto parašas</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --page-bg: #3f4652;
+      --ink: #111312;
+      --muted: #5a6472;
+      --line: #dfe4ea;
+      --accent: #f5b301;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+      background: radial-gradient(circle at top left, rgba(245, 179, 1, 0.16), transparent 34%), var(--page-bg);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
+    }
+
+    .page {
+      width: min(760px, 100%);
+    }
+
+    .intro {
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .intro h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .intro p {
+      margin: 6px 0 0;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #111312;
+      font-weight: 700;
+      padding: 12px 18px;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.22);
+    }
+
+    button:active { transform: translateY(1px); }
+
+    .preview {
+      border-radius: 14px;
+      background: rgba(17, 19, 18, 0.48);
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+      overflow-x: auto;
+    }
+
+    .hint {
+      margin-top: 14px;
+      color: rgba(255,255,255,0.68);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .status {
+      min-height: 20px;
+      margin-top: 10px;
+      color: #ffd166;
+      font-weight: 700;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="intro">
+      <div>
+        <h1>Fazis el. pašto parašas</h1>
+        <p>Atsidarykite šį failą naršyklėje, spauskite „Kopijuoti parašą“ ir įklijuokite į el. pašto parašo nustatymus.</p>
+      </div>
+      <button type="button" id="copySignature">Kopijuoti parašą</button>
+    </div>
+
+    <section class="preview" aria-label="Parašo peržiūra">
+      <div id="signature">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:620px; border-collapse:collapse; background:#ffffff; border:1px solid #dfe4ea; border-radius:10px; overflow:hidden; font-family:Arial, Helvetica, sans-serif; color:#111312;">
+          <tr>
+            <td style="width:8px; background:#f5b301; font-size:0; line-height:0;">&nbsp;</td>
+            <td style="padding:18px 20px 18px 18px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%; border-collapse:collapse;">
+                <tr>
+                  <td style="vertical-align:middle; padding:8px 24px 8px 8px; width:190px; min-width:190px; text-align:center;">
+                    <div style="font-family:Arial, Helvetica, sans-serif; font-size:44px; line-height:1; font-weight:900; letter-spacing:-1px; color:#111312; text-align:center;">
+                      fazis<span style="color:#f5b301;">.</span>
+                    </div>
+                  </td>
+                  <td style="vertical-align:middle; padding-left:22px; border-left:1px solid #dfe4ea;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; font-size:13px; line-height:1.55; color:#111312;">
+                      <tr>
+                        <td style="padding:4px 10px 4px 0; width:28px; vertical-align:middle;">
+                          <span style="display:inline-block; width:24px; height:24px; border-radius:50%; background:#f5b301;">
+                            <img src="https://fazis.lt/sign/phone.png" width="14" height="14" alt="Tel." style="display:block; width:14px; height:14px; margin:5px auto; border:0; outline:none; text-decoration:none;" />
+                          </span>
+                        </td>
+                        <td style="padding:4px 0; vertical-align:middle;"><a href="tel:+37062794262" style="color:#111312; text-decoration:none; font-weight:700;">+370 627 94262</a></td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 10px 4px 0; width:28px; vertical-align:middle;">
+                          <span style="display:inline-block; width:24px; height:24px; border-radius:50%; background:#f5b301;">
+                            <img src="https://fazis.lt/sign/mail.png" width="14" height="14" alt="El. paštas" style="display:block; width:14px; height:14px; margin:5px auto; border:0; outline:none; text-decoration:none;" />
+                          </span>
+                        </td>
+                        <td style="padding:4px 0; vertical-align:middle;"><a href="mailto:info@fazis.lt" style="color:#111312; text-decoration:none; font-weight:700;">info@fazis.lt</a></td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 10px 4px 0; width:28px; vertical-align:middle;">
+                          <span style="display:inline-block; width:24px; height:24px; border-radius:50%; background:#f5b301;">
+                            <img src="https://fazis.lt/sign/website.png" width="14" height="14" alt="Svetainė" style="display:block; width:14px; height:14px; margin:5px auto; border:0; outline:none; text-decoration:none;" />
+                          </span>
+                        </td>
+                        <td style="padding:4px 0; vertical-align:middle;"><a href="https://fazis.lt" style="color:#111312; text-decoration:none; font-weight:700;">fazis.lt</a></td>
+                      </tr>
+
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <div class="status" id="status" aria-live="polite"></div>
+    <p class="hint">Jeigu jūsų pašto programa nepriima kopijavimo mygtuku, pažymėkite patį parašo bloką pele, nukopijuokite ir įklijuokite į Gmail, Outlook ar Hostinger Webmail parašo lauką.</p>
+  </main>
+
+  <script>
+    const button = document.getElementById('copySignature');
+    const signature = document.getElementById('signature');
+    const status = document.getElementById('status');
+
+    button.addEventListener('click', async () => {
+      const html = signature.innerHTML.trim();
+      const text = 'Fazis\n+370 627 94262\ninfo@fazis.lt\nhttps://fazis.lt';
+
+      try {
+        if (navigator.clipboard && window.ClipboardItem) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              'text/html': new Blob([html], { type: 'text/html' }),
+              'text/plain': new Blob([text], { type: 'text/plain' })
+            })
+          ]);
+        } else {
+          const range = document.createRange();
+          range.selectNode(signature);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          document.execCommand('copy');
+          selection.removeAllRanges();
+        }
+
+        status.textContent = 'Parašas nukopijuotas.';
+      } catch (error) {
+        status.textContent = 'Nepavyko nukopijuoti automatiškai. Pažymėkite parašą pele ir kopijuokite rankiniu būdu.';
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ChevronDown } from "lucide-react";
 import { Footer } from "../../components/Footer";
 import { Navigation } from "../../components/Navigation";
 import { Wrapper } from "../../components/Wrapper";
@@ -55,19 +55,27 @@ export default async function BlogPostPage({ params }) {
       <Navigation />
       <main>
         <article>
-          <section className="bg-[#111312] pt-20 text-white">
-            <Wrapper className="py-12">
+          <section className="relative min-h-[42vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(17,19,18,0.88)_0%,rgba(17,19,18,0.64)_46%,rgba(17,19,18,0.24)_100%)]" />
+            <div className="absolute inset-0 bg-[#111312]/18" />
+
+            <Wrapper className="relative z-10 flex min-h-[42vh] flex-col justify-center py-12 md:min-h-[48vh]">
               <Link
                 href="/blogas"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#ffd166]"
+                className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-white hover:text-[#ffd166]"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Grįžti į blogą
               </Link>
-              <p className="section-kicker mt-8 text-[#ffd166]">
-                {post.category}
-              </p>
-              <h1 className="mt-3 max-w-4xl text-4xl font-bold md:text-6xl">
+              <h1 className="mt-7 max-w-4xl text-4xl font-bold md:text-6xl">
                 {post.title}
               </h1>
               <div className="mt-5 flex flex-wrap gap-3 text-white">
@@ -78,59 +86,46 @@ export default async function BlogPostPage({ params }) {
           </section>
 
           <Wrapper className="py-10">
-            <div className="relative h-[320px] overflow-hidden rounded-lg ring-1 ring-white/10 md:h-[480px]">
-              <Image
-                src={post.image}
-                alt={post.title}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
-
-            {post.videoUrl && (
-              <div className="mt-8 aspect-video overflow-hidden rounded-lg bg-[#111312] ring-1 ring-white/10">
-                <iframe
-                  title={post.title}
-                  src={post.videoUrl}
-                  className="h-full w-full"
-                  allowFullScreen
-                />
-              </div>
-            )}
-
-            <div className="mx-auto mt-10 max-w-3xl rounded-lg bg-[#343b46] p-6 ring-1 ring-white/10 md:p-8">
-              <p className="text-xl leading-9 text-white">{post.excerpt}</p>
-
-              <div className="mt-10 space-y-10">
+            <div className="mx-auto max-w-3xl rounded-lg bg-[#343b46] p-6 ring-1 ring-white/10 md:p-8">
+              <div className="space-y-10">
                 {post.content.map((section) => (
                   <section key={section.heading}>
                     <h2 className="text-3xl font-bold text-white">
                       {section.heading}
                     </h2>
-                    <p className="mt-4 text-lg leading-8 text-white">
-                      {section.body}
-                    </p>
+                    <div className="mt-4 space-y-4">
+                      {(section.paragraphs ?? [section.body]).map(
+                        (paragraph) => (
+                          <p
+                            key={paragraph}
+                            className="text-lg leading-8 text-white"
+                          >
+                            {paragraph}
+                          </p>
+                        ),
+                      )}
+                    </div>
                   </section>
                 ))}
               </div>
 
-              <section className="mt-12 rounded-lg bg-[#111312] p-6 ring-1 ring-white/10">
+              <section className="mt-12 border-t border-white/10 pt-10">
                 <h2 className="text-3xl font-bold text-white">DUK</h2>
-                <div className="mt-6 space-y-5">
+                <div className="mt-6 space-y-3">
                   {post.faq.map((item) => (
-                    <div key={item.question} className="flex gap-3">
-                      <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#ffd166]" />
-                      <div>
-                        <h3 className="font-bold text-white">
-                          {item.question}
-                        </h3>
-                        <p className="mt-1 leading-7 text-white">
-                          {item.answer}
-                        </p>
-                      </div>
-                    </div>
+                    <details
+                      key={item.question}
+                      name="blog-faq"
+                      className="group rounded-lg bg-[#3f4652] ring-1 ring-white/10"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 font-bold text-white marker:hidden">
+                        <span>{item.question}</span>
+                        <ChevronDown className="h-5 w-5 shrink-0 text-[#ffd166] transition-transform group-open:rotate-180" />
+                      </summary>
+                      <p className="px-4 pb-4 leading-7 text-white">
+                        {item.answer}
+                      </p>
+                    </details>
                   ))}
                 </div>
               </section>
