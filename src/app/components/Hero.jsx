@@ -32,11 +32,11 @@ export default function Hero() {
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="tel:+37062794262"
+              href="tel:+37061621663"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur transition-colors hover:bg-white/18"
             >
               <PhoneCall className="h-5 w-5" />
-              +370 627 94262
+              +37061621663
             </a>
           </div>
         </div>
@@ -44,3 +44,4 @@ export default function Hero() {
     </section>
   );
 }
+

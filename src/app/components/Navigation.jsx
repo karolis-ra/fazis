@@ -72,8 +72,8 @@ export const Navigation = () => {
           </div>
 
           <a
-            href="tel:+37062794262"
-            aria-label="Skambinti +370 627 94262"
+            href="tel:+37061621663"
+            aria-label="Skambinti +370 616 21663"
             className="group inline-flex items-center gap-2 rounded-full bg-[#f5b301] px-5 py-2.5 text-sm font-semibold text-[#111312] shadow-call-pulse transition-colors hover:bg-[#ffd166] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffd166]/60"
           >
             Skambinti
@@ -117,8 +117,8 @@ export const Navigation = () => {
           })}
 
           <a
-            href="tel:+37062794262"
-            aria-label="Skambinti +370 627 94262"
+            href="tel:+37061621663"
+            aria-label="Skambinti 370 616 21663"
             className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#f5b301] px-5 py-3 text-sm font-semibold text-[#111312] hover:bg-[#ffd166]"
           >
             <PhoneCall className="h-4 w-4" />

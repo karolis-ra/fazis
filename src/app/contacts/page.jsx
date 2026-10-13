@@ -224,11 +224,11 @@ export default function ContactsPage() {
                 <h2 className="text-2xl font-bold">Susisiekite tiesiogiai</h2>
                 <div className="mt-6 space-y-4 text-white">
                   <a
-                    href="tel:+37062794262"
+                    href="tel:+37061621663"
                     className="flex items-center gap-3 hover:text-[#ffd166]"
                   >
                     <Phone className="h-5 w-5 text-[#ffd166]" />
-                    <span>+370 627 94262</span>
+                    <span>370 616 21663</span>
                   </a>
                   <a
                     href="mailto:info@fazis.lt"

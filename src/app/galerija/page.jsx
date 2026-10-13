@@ -57,9 +57,9 @@ export default function GalleryPage() {
   const images = getGalleryImages();
 
   return (
-    <div className="min-h-screen bg-[#3f4652]">
+    <div className="min-h-screen overflow-x-hidden bg-[#3f4652]">
       <Navigation />
-      <main>
+      <main className="overflow-x-hidden">
         <section className="relative min-h-[38vh] overflow-hidden bg-[#111312] text-white md:min-h-[48vh]">
           <Image
             src="/images/galerija-hero.jpg"
@@ -78,8 +78,8 @@ export default function GalleryPage() {
           </Wrapper>
         </section>
 
-        <section className="py-16">
-          <Wrapper>
+        <section className="overflow-x-hidden py-16">
+          <Wrapper className="overflow-x-hidden">
             {images.length > 0 ? (
               <GalleryViewer images={images} />
             ) : (

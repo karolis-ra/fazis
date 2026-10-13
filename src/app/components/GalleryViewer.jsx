@@ -57,9 +57,9 @@ export default function GalleryViewer({ images }) {
   if (!activeImage) return null;
 
   return (
-    <>
-      <div className="overflow-hidden rounded-lg bg-[#111312] ring-1 ring-white/10">
-        <div className="relative aspect-[16/9] min-h-[280px] md:min-h-[420px]">
+    <div className="w-full min-w-0 max-w-full overflow-x-hidden">
+      <div className="w-full min-w-0 max-w-full overflow-hidden rounded-lg bg-[#111312] ring-1 ring-white/10">
+        <div className="relative aspect-[16/9] min-h-[280px] w-full min-w-0 max-w-full md:min-h-[420px]">
           <Image
             src={activeImage.src}
             alt={activeImage.alt}
@@ -84,7 +84,7 @@ export default function GalleryViewer({ images }) {
               <button
                 type="button"
                 onClick={showPrevious}
-                className="absolute left-3 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:left-4 md:h-11 md:w-11"
+                className="absolute left-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:inline-flex"
                 aria-label="Ankstesnė nuotrauka"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -92,22 +92,44 @@ export default function GalleryViewer({ images }) {
               <button
                 type="button"
                 onClick={showNext}
-                className="absolute right-3 top-1/2 z-20 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:right-4 md:h-11 md:w-11"
+                className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md bg-[#111312]/82 text-white shadow-lg backdrop-blur transition-colors hover:bg-[#111312] md:inline-flex"
                 aria-label="Kita nuotrauka"
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
+              <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between md:hidden">
+                <button
+                  type="button"
+                  onClick={showPrevious}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#111312]/86 text-white shadow-lg backdrop-blur"
+                  aria-label="Ankstesnė nuotrauka"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <div className="rounded-full bg-[#111312]/82 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur">
+                  {activeIndex + 1} / {images.length}
+                </div>
+                <button
+                  type="button"
+                  onClick={showNext}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#111312]/86 text-white shadow-lg backdrop-blur"
+                  aria-label="Kita nuotrauka"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </div>
             </>
           )}
 
-          <div className="absolute bottom-4 left-4 rounded-full bg-[#111312]/78 px-4 py-2 text-sm font-semibold text-white backdrop-blur">
+          <div className="absolute bottom-4 left-4 hidden rounded-full bg-[#111312]/78 px-4 py-2 text-sm font-semibold text-white backdrop-blur md:block">
             {activeIndex + 1} / {images.length}
           </div>
         </div>
       </div>
 
       {hasManyImages && (
-        <div className="mt-5 flex flex-wrap justify-center gap-2">
+        <div className="mt-5 w-full max-w-full overflow-hidden">
+          <div className="mx-auto flex max-w-full flex-wrap justify-center gap-2 px-1">
           {images.map((image, index) => (
             <button
               key={image.src}
@@ -121,16 +143,17 @@ export default function GalleryViewer({ images }) {
               aria-label={`Rodyti nuotrauką ${index + 1}`}
             />
           ))}
+          </div>
         </div>
       )}
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid w-full min-w-0 max-w-full gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {images.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setLightboxIndex(index)}
-            className="group overflow-hidden rounded-lg bg-[#343b46] text-left ring-1 ring-white/10"
+            className="group min-w-0 overflow-hidden rounded-lg bg-[#343b46] text-left ring-1 ring-white/10"
             aria-label="Padidinti nuotrauką"
           >
             <span className="relative block aspect-[4/3]">
@@ -206,6 +229,6 @@ export default function GalleryViewer({ images }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

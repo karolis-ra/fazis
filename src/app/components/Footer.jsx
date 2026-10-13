@@ -40,11 +40,11 @@ export const Footer = () => {
               <span>info@fazis.lt</span>
             </a>
             <a
-              href="tel:+37062794262"
+              href="tel:+37061621663"
               className="flex items-center gap-2 hover:text-white"
             >
               <Phone className="h-4 w-4 text-[#ffd166]" />
-              <span>+370 627 94262</span>
+              <span>+370 616 21663</span>
             </a>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-[#ffd166]" />

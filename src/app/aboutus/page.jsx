@@ -81,7 +81,7 @@ export default function AboutUsPage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href="tel:+37062794262"
+                href="tel:+37061621663"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f5b301] px-5 py-3 font-semibold text-[#111312] hover:bg-[#ffd166]"
               >
                 <PhoneCall className="h-5 w-5" />
