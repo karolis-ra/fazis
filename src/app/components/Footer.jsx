@@ -1,62 +1,6 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { instagramUrl } from "./InstagramSection";
 import { Wrapper } from "./Wrapper";
 
-export const Footer = () => {
-  return (
-    <footer className="bg-[#111312] text-white">
-      <Wrapper className="py-12">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr] md:items-start">
-          <div>
-            <h3 className="font-logo text-3xl font-bold">
-              fazis<span className="text-[#f5b301]">.</span>
-            </h3>
-          </div>
-
-          <nav className="flex flex-col gap-3 text-white/78">
-            <Link href="/services" className="hover:text-white">
-              Paslaugos
-            </Link>
-            <Link href="/aboutus" className="hover:text-white">
-              Apie mus
-            </Link>
-            <Link href="/galerija" className="hover:text-white">
-              Galerija
-            </Link>
-            <Link href="/blogas" className="hover:text-white">
-              Blogas
-            </Link>
-            <Link href="/contacts" className="hover:text-white">
-              Kontaktai
-            </Link>
-          </nav>
-
-          <div className="space-y-3 text-white/78">
-            <a
-              href="mailto:info@fazis.lt"
-              className="flex items-center gap-2 hover:text-white"
-            >
-              <Mail className="h-4 w-4 text-[#ffd166]" />
-              <span>info@fazis.lt</span>
-            </a>
-            <a
-              href="tel:+37061621663"
-              className="flex items-center gap-2 hover:text-white"
-            >
-              <Phone className="h-4 w-4 text-[#ffd166]" />
-              <span>+370 616 21663</span>
-            </a>
-            <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#ffd166]" />
-              <span>Vilnius ir aplinkiniai rajonai</span>
-            </div>
-          </div>
-        </div>
-      </Wrapper>
-
-      <div className="border-t border-white/10 py-6 text-center text-sm text-white/55">
-        © {new Date().getFullYear()} Fazis. Visos teisės saugomos.
-      </div>
-    </footer>
-  );
-};
+export const Footer = () => <footer className="site-footer"><Wrapper><div className="footer-grid"><div className="footer-intro"><Link href="/" className="brand">fazis<span className="brand-dot">.</span></Link><p>Elektros darbai Jūsų namams.<br />Saugumas, aiškumas ir tvarka.</p></div><div><p className="footer-title">Atraskite</p><nav className="footer-links" aria-label="Apatinė navigacija"><Link href="/services">Paslaugos ir kainos</Link><Link href="/aboutus">Apie mus</Link><Link href="/galerija">Galerija</Link><Link href="/blogas">Blogas</Link><Link href="/contacts">Kontaktai</Link></nav></div><div><p className="footer-title">Susisiekime</p><div className="footer-links"><a href="tel:+37061621663"><Phone />+370 616 21663</a><a href="mailto:info@fazis.lt"><Mail />info@fazis.lt</a><span className="flex items-start gap-2.5"><MapPin />Vilnius ir aplinkiniai rajonai</span><a href={instagramUrl} target="_blank" rel="noopener noreferrer"><Instagram />@fazis_elektrikas</a></div></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Fazis. Visos teisės saugomos.</span></div></Wrapper></footer>;

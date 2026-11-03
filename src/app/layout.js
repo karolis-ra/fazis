@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="lt" className="bg-[#f8faf7]">
+    <html lang="lt">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <Script
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           charSet="UTF-8"
         />
       </head>
-      <body className="antialiased bg-[#f8faf7] text-[#111312]">
+      <body className="antialiased">
         {children}
       </body>
     </html>

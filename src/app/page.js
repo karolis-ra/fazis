@@ -1,150 +1,88 @@
 import Link from "next/link";
-import { ArrowRight, ClipboardList, MessageCircle, ShieldCheck, Wrench } from "lucide-react";
-import { Footer } from "./components/Footer";
+import { ArrowRight, Check, ClipboardCheck, Plus, ShieldCheck, Sparkles } from "lucide-react";
 import Hero from "./components/Hero";
 import { Navigation } from "./components/Navigation";
 import { Services } from "./components/Services";
+import { Footer } from "./components/Footer";
 import { Wrapper } from "./components/Wrapper";
+import BlogCard from "./components/BlogCard";
+import ContactStrip from "./components/ContactStrip";
+import CustomerReviews from "./components/CustomerReviews";
+import InstagramSection from "./components/InstagramSection";
+import Reveal from "./components/Reveal";
+import WorkProcess from "./components/WorkProcess";
 import { blogPosts } from "./data/blogPosts";
 
 export const metadata = {
-  title: "Fazis - elektriko paslaugos Vilniuje ir aplink",
-  description:
-    "Tvarkingi elektros darbai namams ir verslui: gedimų diagnostika, apšvietimas, kištukiniai lizdai, jungikliai, instaliacija ir smulkūs elektriko darbai.",
-  keywords: [
-    "elektrikas",
-    "elektriko paslaugos",
-    "elektros darbai",
-    "elektros gedimai",
-    "apšvietimo montavimas",
-    "kištukinių lizdų montavimas",
-    "Fazis",
-  ],
-  alternates: {
-    canonical: "https://fazis.lt/",
-  },
+  title: "Fazis - elektros darbai Vilniuje",
+  description: "Elektros montavimo darbai, apsaugos sistemos ir smulkūs elektriko darbai Vilniuje bei aplinkiniuose rajonuose. Paslaugos, kainos ir aiškus susitarimas.",
+  alternates: { canonical: "https://fazis.lt/" },
   openGraph: {
-    title: "Fazis - elektriko paslaugos",
-    description:
-      "Atsakingi elektros darbai namams ir verslui. Aiški komunikacija, saugūs sprendimai ir tvarkingas rezultatas.",
+    title: "Fazis - elektros darbai Jūsų namams",
+    description: "Nuo pirmojo laidelio iki paskutinio šviestuvo. Aiškiai susitariame, atsakingai atliekame.",
     url: "https://fazis.lt/",
     siteName: "Fazis",
     locale: "lt_LT",
     type: "website",
-    images: [
-      {
-        url: "/images/fazis-hero.jpg",
-        width: 1920,
-        height: 1080,
-        alt: "Fazis elektriko paslaugos",
-      },
-    ],
-  },
-  robots: {
-    index: true,
-    follow: true,
+    images: [{ url: "/images/redesign/hero-hallway.jpg", width: 2400, height: 1602, alt: "Fazis elektros darbai" }],
   },
 };
 
-const steps = [
-  {
-    icon: MessageCircle,
-    title: "Susisiekiate",
-    text: "Trumpai aprašote situaciją, atsiunčiate nuotraukų arba paskambinate.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Įvertiname",
-    text: "Aptariame galimą sprendimą, darbų apimtį, laiką ir orientacinę kainą.",
-  },
-  {
-    icon: Wrench,
-    title: "Atliekame",
-    text: "Darbai atliekami saugiai, tvarkingai ir pagal sutartą planą.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Patikriname",
-    text: "Po darbų patikrinamas rezultatas ir paaiškinama, kas buvo atlikta.",
-  },
+const faq = [
+  { question: "Ar atliekate ir nedidelius elektros darbus?", answer: "Taip. Galite kreiptis dėl šviestuvo pakeitimo, kištukinio lizdo, kaitlentės ar LED apšvietimo pajungimo ir kitų nedidelių užduočių." },
+  { question: "Kaip sužinoti, kiek kainuos darbai?", answer: "Pradėkite nuo kainos skaičiuoklės arba susisiekite. Tiksliau įvertinti padeda darbų aprašymas, nuotraukos ar planas. Prireikus susitariame dėl objekto apžiūros." },
+  { question: "Kur atliekate darbus?", answer: "Dirbame Vilniuje ir aplinkiniuose rajonuose. Susisiekę nurodykite objekto vietą, o mes aptarsime atvykimą ir tinkamą laiką." },
+  { question: "Ar medžiagos įtrauktos į darbų kainą?", answer: "Darbų ir medžiagų kainas aptariame atskirai. Skaičiuoklėje medžiagos rodomos kaip preliminarus intervalas, nes suma priklauso nuo pasirinktos įrangos ir montavimo sąlygų." },
 ];
 
 export default function Home() {
-  const latestPosts = blogPosts.slice(0, 3);
-
   return (
-    <div className="bg-[#f8faf7]">
+    <>
       <Navigation />
-      <Hero />
-      <Services />
-
-      <section className="bg-[#111312] py-20 text-white">
-        <Wrapper>
-          <p className="section-kicker text-[#ffd166]">Darbo eiga</p>
-          <h2 className="mt-3 max-w-3xl text-4xl font-bold text-white md:text-5xl">
-            Paprastas procesas be miglos ir spėlionių
-          </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-4">
-            {steps.map(({ icon: Icon, title, text }, index) => (
-              <article
-                key={title}
-                className="rounded-lg bg-white/7 p-6 ring-1 ring-white/10"
-              >
-                <div className="mb-5 flex items-center gap-3">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-[#f5b301] text-[#111312]">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="text-sm font-bold text-[#ffd166]">
-                    0{index + 1}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white">{title}</h3>
-                <p className="mt-3 leading-7 text-white/70">{text}</p>
-              </article>
-            ))}
-          </div>
-        </Wrapper>
-      </section>
-
-      <section className="bg-white py-20">
-        <Wrapper>
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="section-kicker">Blogas</p>
-              <h2 className="mt-3 max-w-2xl text-4xl font-bold text-[#111312] md:text-5xl">
-                Naudingi atsakymai apie elektrą namuose
-              </h2>
-            </div>
-            <Link
-              href="/blogas"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#111312]/18 px-5 py-3 font-semibold text-[#111312] transition-colors hover:bg-[#111312] hover:text-white"
-            >
-              Visi straipsniai
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {latestPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blogas/${post.slug}`}
-                className="group rounded-lg bg-[#f8faf7] p-6 ring-1 ring-[#111312]/10 transition-transform hover:-translate-y-1"
-              >
-                <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#b86f2f]">
-                  {post.category}
-                </p>
-                <h3 className="mt-4 text-2xl font-bold text-[#111312] group-hover:text-[#8a5a00]">
-                  {post.title}
-                </h3>
-                <p className="mt-3 leading-7 text-[#47606a]">{post.excerpt}</p>
-              </Link>
-            ))}
-          </div>
-        </Wrapper>
-      </section>
-
+      <main>
+        <Hero />
+        <section className="trust-strip" aria-label="Mūsų darbo principai">
+          <Wrapper className="trust-items">
+            <div className="trust-item"><ShieldCheck /><span>Atsakingas atlikimas</span></div>
+            <div className="trust-item"><ClipboardCheck /><span>Aiškus susitarimas</span></div>
+            <div className="trust-item"><Sparkles /><span>Tvarkinga darbo vieta</span></div>
+          </Wrapper>
+        </section>
+        <Services />
+        <section className="section-space about-preview">
+          <Wrapper className="about-preview-grid">
+            <Reveal>
+              <p className="section-kicker">Fazis požiūris</p>
+              <h2 className="section-heading">Tvarka darbuose.<br />Aiškumas bendravime.</h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p className="section-copy">Geras sprendimas prasideda nuo įsiklausymo. Aptariame Jūsų poreikius ir suprantamai paaiškiname, ką bei kodėl reikia atlikti.</p>
+              <ul className="about-principles">
+                <li><Check /><span>Darbų apimtį ir orientacinę kainą suderiname prieš pradėdami.</span></li>
+                <li><Check /><span>Sprendimus parenkame pagal konkrečią situaciją.</span></li>
+                <li><Check /><span>Skiriame dėmesį saugumui, tikslumui ir tvarkai.</span></li>
+              </ul>
+            </Reveal>
+          </Wrapper>
+        </section>
+        <WorkProcess />
+        <InstagramSection />
+        <CustomerReviews />
+        <section className="section-space blog-section">
+          <Wrapper>
+            <Reveal className="section-head"><div><p className="section-kicker">Naudinga žinoti</p><h2 className="section-heading">Blogas</h2></div><Link href="/blogas" className="text-link">Visi straipsniai <ArrowRight size={18} /></Link></Reveal>
+            <div className="blog-grid">{blogPosts.map((post, index) => <Reveal key={post.slug} delay={index * 80}><BlogCard post={post} /></Reveal>)}</div>
+          </Wrapper>
+        </section>
+        <section className="section-space faq-section">
+          <Wrapper className="faq-layout">
+            <Reveal><p className="section-kicker">Prieš susisiekiant</p><h2 className="section-heading">D.U.K</h2><p className="section-copy">Keli atsakymai, kad planuoti elektros darbus būtų paprasčiau.</p><Link href="/contacts" className="text-link mt-5">Turite kitą klausimą? <ArrowRight size={18} /></Link></Reveal>
+            <div className="faq-list">{faq.map(({ question, answer }) => <details key={question} className="faq-item" name="home-faq"><summary>{question}<Plus /></summary><p>{answer}</p></details>)}</div>
+          </Wrapper>
+        </section>
+        <ContactStrip />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
