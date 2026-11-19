@@ -2,16 +2,21 @@
 
 ## User Gallery
 
-On 2026-11-03 the gallery was switched to the user's own work and workplace
-photographs from `public/images/gallery`. Web copies are in
-`public/images/gallery-web`, with the original filename plus `.webp`.
-The 40 originals are unchanged. Copies are EXIF-rotated, resized to fit within
-1800 x 1800, and WebP-compressed at quality 82 (10,491,988 bytes in total).
-Gallery data is read from the original folder at build time, preferring an
-optimized copy when present and falling back to the original for new files.
-The stock gallery and its stock-photo credit have been removed.
+The gallery uses the user's own work and workplace photographs. The images are
+read from `public/images/gallery-web` at build time. WebP files fit within
+1440 x 1440 pixels, preserve their aspect ratios, and weigh at most 500 KB
+(500,000 bytes) each.
 
 ## Current Home Hero
+
+On 2026-11-19 the user selected an ImageGen illustration of a lobby with the
+Fazis wordmark and integrated LED lighting. The mobile homepage and social
+preview use `public/images/redesign/fazis-foje.webp` (1672 x 941). The desktop
+homepage selects between `fazis-foje-desktop.webp` (1672 x 941, higher quality)
+and `fazis-foje-desktop-2x.webp` (3344 x 1882, upscaled from the same original).
+The scene depicts a concept lobby.
+
+## Previous Hallway Home Hero
 
 On 2026-11-03 the user supplied `pexels-artbovich-6238610.jpg` and selected it
 for the home hero. The web copy is `public/images/redesign/hero-hallway.jpg`
@@ -34,9 +39,8 @@ On 2026-10-18 the user supplied `contacts.jpg` for the contacts-page hero. Its w
 copy is `public/images/redesign/hero-contacts.jpg`, JPEG-compressed without changing
 the composition. The original photographer and license were not supplied.
 
-Downloaded and verified on 2026-10-13. These are real stock photographs from
-Unsplash and Pexels, not photographs of Fazis work. No generated images or assets
-copied from competitor websites are included.
+The stock photographs listed below were downloaded and verified on 2026-10-13.
+They are illustrative photographs from Unsplash and Pexels.
 
 Use these images as illustrative service imagery only. Do not label them as
 Fazis projects, completed installations, staff, clients, testimonials, or proof of

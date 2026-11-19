@@ -2,7 +2,6 @@ export const cablePost = {
   "slug": "kaip-pasirinkti-kabeli-apsvietimui-ir-kistukiniams-lizdams",
   "title": "Kokį kabelį rinktis elektros instaliacijai?",
   "date": "2026-08-17",
-  "readTime": "12 min.",
   "image": "/images/blog/kabeliai.jpg",
   "excerpt": "Praktinis gidas, padedantis suprasti, kodėl kabelis turi būti derinamas su apkrova, apsauga ir konkrečiomis montavimo sąlygomis.",
   "content": [

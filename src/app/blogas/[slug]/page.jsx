@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }) {
             <Wrapper className="page-hero-copy">
               <Link href="/blogas" className="text-link article-back"><ArrowLeft size={16} /> Grįžti į blogą</Link>
               <h1>{post.title}</h1>
-              <div className="article-meta"><span>{post.date}</span><span>{post.readTime}</span></div>
+              <div className="article-meta"><time dateTime={post.date}>{post.date}</time></div>
             </Wrapper>
           </section>
           <Wrapper>

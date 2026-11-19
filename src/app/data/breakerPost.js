@@ -2,7 +2,6 @@ export const breakerPost = {
   slug: "kaip-parinkti-automatini-jungikli",
   title: "Kaip parinkti automatinį jungiklį",
   date: "2026-08-17",
-  readTime: "6 min.",
   image: "/images/blog/automatinis-jungiklis.jpg",
   excerpt:
     "Automatinis jungiklis turi būti derinamas su kabeliu, apkrova ir montavimo sąlygomis. Jo paskirtis nėra tiesiog leisti naudoti daugiau galios.",

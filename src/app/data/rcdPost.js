@@ -2,7 +2,6 @@ export const rcdPost = {
   "slug": "automatinis-jungiklis-ir-sroves-nuotekio-rele",
   "title": "Automatinis jungiklis ir RCD: kuo jie skiriasi?",
   "date": "2026-08-17",
-  "readTime": "14 min.",
   "image": "/images/blog/nuotekio-rele.jpg",
   "excerpt": "Aiškiai apie tai, kuo skiriasi automatinis jungiklis, RCD ir RCBO, nuo kokių gedimų jie saugo ir kodėl vienas aparatas nepakeičia kito.",
   "content": [
