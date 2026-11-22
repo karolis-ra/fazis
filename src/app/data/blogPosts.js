@@ -1,12 +1,7 @@
-import { breakerPost } from "./breakerPost";
-import { cablePost } from "./cablePost";
-import { rcdPost } from "./rcdPost";
+import { electricityAtHomePost } from "./electricityAtHomePost";
+import { electricalQuantitiesPost } from "./electricalQuantitiesPost";
 
-export const blogPosts = [
-  cablePost,
-  breakerPost,
-  rcdPost,
-];
+export const blogPosts = [electricityAtHomePost, electricalQuantitiesPost];
 
 export function getPostBySlug(slug) {
   return blogPosts.find((post) => post.slug === slug);

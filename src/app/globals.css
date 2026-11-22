@@ -127,11 +127,16 @@ main, section, article, aside { min-width: 0; }
 
 .blog-section { background: #f5f7f8; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.blog-grid:has(> :only-child) { grid-template-columns: minmax(0, 552px); }
+.blog-index-grid { justify-content: center; }
+@media (min-width: 768px) {
+  .blog-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 475px)); }
+}
 .blog-card { display: flex; height: 100%; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
-.blog-card-image { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #e6ecee; }
-.blog-card-image img { object-fit: cover; }
+.blog-card-image { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--line); background: #fff; }
+.blog-card-image img { object-fit: contain; }
 .blog-card-content { display: flex; flex: 1; flex-direction: column; align-items: start; padding: 25px; }
-.blog-card h3 { margin-top: 15px; font-size: 22px; font-weight: 700; line-height: 1.35; }
+.blog-card-title { font-size: clamp(21px, 2.5vw, 26px); font-weight: 700; line-height: 1.3; text-wrap: balance; }
 .blog-card p { margin-top: 14px; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .blog-card .text-link { margin-top: auto; padding-top: 19px; }
 
@@ -169,15 +174,51 @@ main, section, article, aside { min-width: 0; }
 .page-hero-copy { position: relative; z-index: 1; padding-block: 55px; }
 .page-hero h1 { max-width: 800px; color: var(--ink); font-size: 54px; font-weight: 700; line-height: 1.12; text-wrap: balance; }
 .page-hero p { margin-top: 20px; max-width: 490px; color: var(--muted); font-size: 16px; line-height: 1.7; }
-.article-hero { min-height: 340px; }
-.article-hero h1 { font-size: 44px; }
-.article-back { margin-bottom: 24px; font-size: 13px; }
-.article-meta { display: flex; gap: 18px; margin-top: 20px; color: var(--muted); font-size: 13px; }
-.article-body { max-width: 760px; margin-inline: auto; padding-block: 66px; overflow-wrap: break-word; }
-.article-body section + section { margin-top: 40px; }
-.article-body h2 { font-size: 28px; font-weight: 700; line-height: 1.3; text-wrap: balance; }
-.article-body p { font-size: 17px; line-height: 1.9; color: #48565d; }
-.article-body .faq-item p { font-size: 16px; }
+.article-hero { border-bottom: 1px solid var(--line); background: #f5f7f8; }
+.article-width { max-width: 720px; margin-inline: auto; }
+.article-heading { padding-block: clamp(26px, 5vw, 62px); }
+.article-back { min-height: 44px; margin-bottom: 16px; font-size: 14px; }
+.article-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 20px; margin-bottom: 16px; color: var(--muted); font-size: 14px; }
+.article-meta span { color: var(--green); font-weight: 700; }
+.article-heading h1 { font-size: clamp(32px, 5.4vw, 58px); font-weight: 700; line-height: 1.1; text-wrap: balance; }
+.article-lead { margin-top: 20px; color: #48565d; font-size: clamp(17px, 2vw, 19px); line-height: 1.75; }
+.article-body { padding-block: clamp(34px, 5.5vw, 72px); overflow-wrap: break-word; }
+.article-body h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; line-height: 1.22; text-wrap: balance; }
+.article-body p { font-size: clamp(16px, 2vw, 17px); line-height: 1.8; color: #48565d; }
+.blog-article[data-justified] :is(.article-lead, .article-section p:not(.article-formula), .article-figure figcaption) { text-align: justify; hyphens: auto; }
+.article-section { scroll-margin-top: 100px; }
+.article-section + .article-section { margin-top: clamp(36px, 6vw, 60px); }
+.article-section > * + * { margin-top: 18px; }
+.article-contents { margin-bottom: clamp(32px, 5vw, 50px); padding: 18px 22px; border: 1px solid var(--line); border-radius: 6px; background: #f5f7f8; }
+.article-contents h2, .article-sources h2 { font-size: 18px; }
+.article-contents ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; margin-top: 6px; }
+.article-contents a { display: flex; align-items: center; min-height: 40px; }
+.article-contents a, .article-sources a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+.article-figure { overflow: hidden; border: 1px solid var(--line); border-radius: 6px; }
+.article-figure a { display: block; }
+.article-figure img { display: block; max-width: 100%; height: auto; margin-inline: auto; }
+.article-figure figcaption { padding: 12px 16px; border-top: 1px solid var(--line); background: #f5f7f8; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.article-table { overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.article-table table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: clamp(13px, 1.8vw, 15px); line-height: 1.55; }
+.article-table :is(th, td) { padding: 11px clamp(7px, 2vw, 16px); vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+.article-table thead { background: #eaf1ee; color: var(--ink); }
+.article-table thead th:first-child { width: 23%; }
+.article-table thead th:nth-child(2) { width: 33%; }
+.article-table tbody tr { border-top: 1px solid var(--line); }
+.article-table tbody td { color: #48565d; }
+.article-body .article-formula { width: fit-content; max-width: 100%; padding: 9px 15px; border: 1px solid var(--line); border-radius: 6px; background: #eaf1ee; color: var(--ink); font-weight: 700; }
+.article-steps { display: grid; gap: 16px; padding-inline-start: 28px; list-style: decimal; }
+.article-steps li { padding-inline-start: 5px; }
+.article-steps li::marker, .article-list li::marker { color: var(--green); font-weight: 700; }
+.article-steps h3 { margin-bottom: 3px; font-size: 18px; font-weight: 700; line-height: 1.4; }
+.article-steps h3 span { color: var(--muted); font-size: 14px; font-weight: 500; }
+.article-list { display: grid; gap: 10px; padding-inline-start: 21px; list-style: disc; }
+.article-sources { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
+.article-sources ul { display: grid; gap: 9px; margin-top: 12px; padding-inline-start: 21px; list-style: disc; font-size: 15px; }
+.article-series-nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.article-series-nav a { display: grid; flex: 1 1 245px; gap: 4px; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
+.article-series-nav a:hover, .article-series-nav a:focus-visible { border-color: var(--green); }
+.article-series-nav span { color: var(--muted); font-size: 13px; }
 .values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
 .value-card { position: relative; overflow: hidden; padding: 30px; border: 1px solid var(--line); border-radius: 6px; background: #fff; }
 .value-icon { display: flex; height: 48px; width: 48px; align-items: center; justify-content: center; border-radius: 6px; background: #edf5f0; color: var(--green); }
@@ -288,7 +329,6 @@ main, section, article, aside { min-width: 0; }
   .about-preview-grid { grid-template-columns: 1fr; gap: 32px; }
   .blog-grid { grid-template-columns: 1fr; gap: 22px; }
   .blog-card-content { padding: 22px; }
-  .blog-card h3 { font-size: 23px; }
   .faq-layout { grid-template-columns: 1fr; gap: 30px; }
   .faq-item summary { padding-block: 21px; font-size: 15px; }
   .contact-strip { padding-block: 38px; }
@@ -312,12 +352,10 @@ main, section, article, aside { min-width: 0; }
   .page-hero-copy { text-align: center; padding-block: 44px; }
   .page-hero h1 { font-size: 39px; }
   .page-hero p { font-size: 14px; }
-  .article-hero { min-height: 330px; }
-  .article-hero .page-hero-copy { text-align: left; }
-  .article-hero h1 { font-size: 32px; }
-  .article-body { padding-block: 44px; }
-  .article-body h2 { font-size: 25px; }
-  .article-body p { font-size: 16px; }
+  .article-contents { padding-inline: 16px; }
+  .article-contents ul { grid-template-columns: 1fr; }
+  .article-steps { padding-inline-start: 24px; }
+  .article-steps li { padding-inline-start: 2px; }
   .values-grid { grid-template-columns: 1fr; margin-top: 32px; }
   .value-card { padding: 25px; }
   .contact-form, .direct-contact { padding: 24px; }
