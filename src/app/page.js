@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Check, ClipboardCheck, Plus, ShieldCheck, Sparkles } from "lucide-react";
-import Hero, { homeHeroImage } from "./components/Hero";
+import Hero from "./components/Hero";
 import { Navigation } from "./components/Navigation";
 import { Services } from "./components/Services";
 import { Footer } from "./components/Footer";
@@ -24,7 +24,7 @@ export const metadata = {
     siteName: "Fazis",
     locale: "lt_LT",
     type: "website",
-    images: [homeHeroImage],
+    images: [{ url: "/images/redesign/lighting.jpg", alt: "Šiuolaikinis namų apšvietimas" }],
   },
 };
 
